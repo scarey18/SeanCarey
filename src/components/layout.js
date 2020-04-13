@@ -1,46 +1,83 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import styled, { createGlobalStyle } from 'styled-components'
+import { lighten } from 'polished'
 
+import P from '../utils/palette'
 import Header from "./header"
-import "./layout.css"
+
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-display: swap;
+  }
+
+  * {
+    transition: all 250ms ease-in-out;
+  }
+
+  html, body, #___gatsby {
+    width: 100%;
+    overflow: auto;
+    overflow: initial;
+  }
+
+  #gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #014d18;
+    background: linear-gradient(
+      120deg, ${lighten(0.13, P.themeColor)}, ${P.themeColor}
+    );
+    color: ${P.fadedWhite};
+  }
+
+  button {
+    text-decoration: none;
+    border: none;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:active {
+    border-style: none;
+  }
+
+  section {
+    width: 100%;
+    padding: 50px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+const Main = styled.main`
+  width: 90%;
+  min-height: 90vh;
+  max-width: 740px;
+  margin: 0 auto;
+  background: ${P.white};
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px ${P.boxShadow};
+  color: ${P.black};
+`
+
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <React.Fragment>
+      <GlobalStyle />
+      <Header />
+      <Main>{children}</Main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </React.Fragment>
   )
 }
 
