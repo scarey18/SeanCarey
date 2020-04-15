@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^3.0.0-alpha.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.20.12",
@@ -23,6 +24,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-icons": "^3.10.0",
     "react-typography": "^0.16.19",
     "styled-components": "^5.1.0",
     "typeface-domine": "0.0.72",

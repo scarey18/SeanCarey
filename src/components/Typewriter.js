@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from 'styled-components'
 import PropTypes from "prop-types"
 
-import P from '../utils/palette'
-
 
 const Cursor = styled.span`
 	display: inline-block;
@@ -21,18 +19,17 @@ const Cursor = styled.span`
 
 
 const Typewriter = props => {
-	const [showCursor, setShowCursor] = useState(props.initialCursor);
-	const [isTyping, setIsTyping] = useState(false);
+	const [showCursor, setShowCursor] = useState(props.isFirst);
 	const [text, setText] = useState('');
-	const timeout = useRef();
+	const [isTyping, setIsTyping] = useState(false);
 	const index = useRef(0);
-	const maxIndex = props.children.length;
+	const timeout = useRef();
+	const textLength = props.children.length;
 
 	useEffect(() => {
 		timeout.current = window.setTimeout(
 			() => {
 				if (!showCursor) setShowCursor(true);
-				if (!isTyping) setIsTyping(true);
 				timeout.current = window.setInterval(type, props.speed);
 			}, 
 			props.initialDelay,
@@ -40,47 +37,57 @@ const Typewriter = props => {
 		return () => clearTimeout(timeout.current);
 	}, [])
 
-	const type = () => {
-		setText(props.children.substring(0, index.current));
-		index.current += 1;
-		if (index.current > maxIndex) {
-			clearTimeout(timeout.current);
+	function type() {
+		if (!isTyping) setIsTyping(true);
+		setText(props.children.substring(0, index.current++));
+
+		if (index.current > textLength) {
+			clearInterval(timeout.current);
 			setIsTyping(false);
+			if (!props.isLast) {
+				timeout.current = window.setTimeout(
+					() => setShowCursor(false),
+					props.delayAfter,
+				)
+			}
 		}
 	}
 
-	const cursorStyle = isTyping ? {
-		animation: 'none',
-	} : {
-		animation: `blinking-cursor 1s infinite`,
-	}
+	const cursorStyle = {};
+	cursorStyle.animation = isTyping || !showCursor ?
+		'none' : `blinking-cursor 1s infinite`;
+	cursorStyle.visibility = !showCursor ?
+		'hidden' : 'visible';
 
 	return (
-		<React.Fragment>
+		<props.tag>
 			{text}
-			{showCursor &&
-				<Cursor color={props.cursorColor} style={cursorStyle}>
-					|
-				</Cursor>
-			}
-		</React.Fragment>
+			<Cursor color={props.cursorColor} style={cursorStyle}>
+				|
+			</Cursor>
+		</props.tag>
 	)
 }
 
 
 Typewriter.propTypes = {
+	tag: PropTypes.string.isRequired,
 	children: PropTypes.string.isRequired,
 	cursorColor: PropTypes.string,
-	initialCursor: PropTypes.bool,
 	initialDelay: PropTypes.number,
 	speed: PropTypes.number,
+	isFirst: PropTypes.bool,
+	isLast: PropTypes.bool,
+	delayAfter: PropTypes.number,
 }
 
 Typewriter.defaultProps = {
-	cursorColor: P.themeColor,
-	initialCursor: true,
+	cursorColor: 'inherit',
 	initialDelay: 1000,
-	speed: 50,
+	speed: 40,
+	isFirst: true,
+	isLast: true,
+	delayAfter: 0,
 }
 
 

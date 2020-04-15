@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { createGlobalStyle } from 'styled-components'
-import { lighten } from 'polished'
 
 import P from '../utils/palette'
-import Header from "./header"
+import Header from "./Header"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -28,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     background: #014d18;
     background: linear-gradient(
-      120deg, ${lighten(0.13, P.themeColor)}, ${P.themeColor}
+      120deg, ${P.lightenedTheme}, ${P.themeColor}
     );
     color: ${P.fadedWhite};
   }
@@ -55,12 +54,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Main = styled.main`
-  width: 90%;
+  width: 100%;
   min-height: 90vh;
-  max-width: 740px;
+  max-width: 900px;
   margin: 0 auto;
   background: ${P.white};
-  border-radius: 15px;
+  border-radius: ${P.borderRadius};
   box-shadow: 0 0 5px 1px ${P.boxShadow};
   color: ${P.black};
 `
