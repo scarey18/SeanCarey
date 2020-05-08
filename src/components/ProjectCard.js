@@ -12,14 +12,27 @@ import ExternalLink from './ExternalLink'
 
 const Card = styled.article`
 	width: 98%;
+	max-width: 800px;
 	background-color: ${P.white};
 	box-shadow: 0 0 10px 2px ${P.boxShadow};
 	border-radius: 7px;
 	margin-bottom: 3rem;
-	padding: 0 35px 35px 35px;
 
 	@media screen and (max-width: 599px) {
 		width: 95vw;
+	}
+`
+
+const Image = styled(Img)`
+	border-radius: 6px 6px 0 0;
+`
+
+const ContentContainer = styled.div`
+	width: 100%;
+	padding: 35px;
+
+	@media screen and (max-width: 599px) {
+		padding: 20px;
 	}
 `
 
@@ -92,24 +105,26 @@ const ProjectCard = props => {
 	return (
 		<Card>
 			{props.imgFluid &&
-				<Img fluid={props.imgFluid} alt="Project screenshot" />}
-			<h2>{props.name}</h2>
-			<p>{props.description}</p>
-			<TechList>
-				{props.techs.map(tech => (
-					<TechItem key={tech}>{tech}</TechItem>
-				))}
-			</TechList>
-			<LinksContainer>
-				<LiveLink href={props.liveLink}>
-					<FaExternalLinkAlt />
-					View Live Site
-				</LiveLink>
-				<SrcLink href={props.srcLink}>
-					<Github />
-					View Source
-				</SrcLink>
-			</LinksContainer>
+				<Image fluid={props.imgFluid} alt="Project screenshot" />}
+			<ContentContainer>
+				<h2>{props.name}</h2>
+				<p>{props.description}</p>
+				<TechList>
+					{props.techs.map(tech => (
+						<TechItem key={tech}>{tech}</TechItem>
+					))}
+				</TechList>
+				<LinksContainer>
+					<LiveLink href={props.liveLink}>
+						<FaExternalLinkAlt />
+						View Live Site
+					</LiveLink>
+					<SrcLink href={props.srcLink}>
+						<Github />
+						View Source
+					</SrcLink>
+				</LinksContainer>
+			</ContentContainer>
 		</Card>
 	)
 }

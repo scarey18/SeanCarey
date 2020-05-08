@@ -19,7 +19,7 @@ const ProjectSection = () => {
 		  allImageSharp {
 		    edges {
 		      node {
-		        fluid {
+		        fluid(maxWidth: 800) {
 		        	...GatsbyImageSharpFluid_withWebp
 		          originalName
 		        }
@@ -42,7 +42,7 @@ const ProjectSection = () => {
 			<ProjectCard
 				name="What Should I Eat?"
 				description="A web app for hungry, indecisive people who don't know where to start their search for food. My first major React app, this project taught me a lot about how to (and how not to) structure such an app, how to integrate React with a non-JavaScript backend (Django), as well as how to work with multiple APIs."
-				techs={["React", "Django", "Yelp API", "ArcGIS REST API", "Google Maps API"]}
+				techs={["React", "Django", "Yelp API", "ArcGIS API", "Google Maps API"]}
 				liveLink="https://www.whatshouldieat.dev/"
 				srcLink="https://github.com/scarey18/whatshouldieat.dev"
 				imgFluid={getFluid('wsie-screenshot.png')}

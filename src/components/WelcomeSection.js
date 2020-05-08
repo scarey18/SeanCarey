@@ -13,6 +13,10 @@ const Section = styled.section`
 	background-color: ${P.black};
 	padding-bottom: 50px;
 	border-radius: 13px 13px 0 0;
+
+	h1, p {
+		text-align: center;
+	}
 `
 
 const WelcomeSection = () => {
