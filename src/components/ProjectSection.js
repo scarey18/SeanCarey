@@ -48,11 +48,12 @@ const ProjectSection = () => {
 				imgFluid={getFluid('wsie-screenshot.png')}
 			/>
 			<ProjectCard
-				name="Test 2"
-				description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam viverra orci sagittis. Tellus id interdum velit laoreet id donec. Porttitor eget dolor morbi non."
-				techs={["HTML5", "CSS3", "React"]}
-				liveLink="alkdsjfa"
-				srcLink="alskdfjasd"
+				name="Matthew Carey Voice"
+				description="A personal website for Matthew Carey, a professional singer and speech-language pathologist. This was my first Gatsby project, and my first project for a client. Creating a CMS and structuring the project in a way that allowed for client content management was an interesting challenge."
+				techs={["React", "Gatsby", "Netlify CMS"]}
+				liveLink="https://hardcore-ardinghelli-3848a2.netlify.app/"
+				srcLink="https://github.com/scarey18/MattCarey"
+				imgFluid={getFluid('mattcarey-screenshot.png')}
 			/>
 			<ProjectCard
 				name="Test 3"

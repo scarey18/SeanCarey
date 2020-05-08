@@ -14,7 +14,7 @@ const TypewriterGroup = ({ children, cursorColor }) => {
 			isFirst: i === 0,
 			isLast: i === childCount - 1,
 			initialDelay: i === 0 ?
-				child.props.initialDelay || 1000 : 
+				child.props.initialDelay || 500 : 
 				totalTime,
 			speed: child.props.speed || 40,
 			delayAfter: child.props.delayAfter || 1000,
