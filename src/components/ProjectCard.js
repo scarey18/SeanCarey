@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from 'styled-components'
 import PropTypes from "prop-types"
 import { FaExternalLinkAlt } from 'react-icons/fa'
@@ -23,7 +23,30 @@ const Card = styled.article`
 	}
 `
 
+const ImgContainer = styled.div`
+	position: relative;
+	width: 100%;
+`
+
 const Image = styled(Img)`
+	border-radius: 6px 6px 0 0;
+`
+
+const LinkModal = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 250ms ease-in-out;
+	transition-property: visibility, opacity;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: ${P.boxShadow};
 	border-radius: 6px 6px 0 0;
 `
 
@@ -102,13 +125,38 @@ const SrcLink = styled(LinkBtn)`
 
 
 const ProjectCard = props => {
+	const [showModal, setShowModal] = useState(false);
+
+	const modalStyle = showModal ? {
+		visibility: 'visible',
+		opacity: 1,
+	} : {
+		visibility: 'hidden',
+		opacity: 0,
+	}
+
 	return (
 		<Card>
-			{props.imgFluid &&
-				<Image fluid={props.imgFluid} alt="Project screenshot" />}
+			<ImgContainer
+				onMouseEnter={() => setShowModal(true)}
+				onMouseLeave={() => setShowModal(false)}
+			>
+				<Image fluid={props.imgFluid} alt="Project screenshot" />
+				<LinkModal style={modalStyle}>
+					<LiveLink href={props.liveLink}>
+						<FaExternalLinkAlt />
+						View Live Site
+					</LiveLink>
+					<SrcLink href={props.srcLink}>
+						<Github />
+						View Source
+					</SrcLink>
+				</LinkModal>
+			</ImgContainer>
+			
 			<ContentContainer>
 				<h2>{props.name}</h2>
-				<p>{props.description}</p>
+				{props.children}
 				<TechList>
 					{props.techs.map(tech => (
 						<TechItem key={tech}>{tech}</TechItem>
@@ -132,11 +180,11 @@ const ProjectCard = props => {
 
 ProjectCard.propTypes = {
 	name: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
 	techs: PropTypes.array.isRequired,
 	liveLink: PropTypes.string.isRequired,
 	srcLink: PropTypes.string.isRequired,
-	imgFluid: PropTypes.object,
+	imgFluid: PropTypes.object.isRequired,
 }
 
 

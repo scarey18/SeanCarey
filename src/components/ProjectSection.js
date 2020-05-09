@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import P from '../utils/palette'
 import SectionHeader from './SectionHeader'
 import ProjectCard from './ProjectCard'
+import ExternalLink from './ExternalLink'
 
 
 const Section = styled.section`
@@ -41,27 +42,60 @@ const ProjectSection = () => {
 			<SectionHeader>Projects</SectionHeader>
 			<ProjectCard
 				name="What Should I Eat?"
-				description="A web app for hungry, indecisive people who don't know where to start their search for food. My first major React app, this project taught me a lot about how to (and how not to) structure such an app, how to integrate React with a non-JavaScript backend (Django), as well as how to work with multiple APIs."
 				techs={["React", "Django", "Yelp API", "ArcGIS API", "Google Maps API"]}
 				liveLink="https://www.whatshouldieat.dev/"
 				srcLink="https://github.com/scarey18/whatshouldieat.dev"
 				imgFluid={getFluid('wsie-screenshot.png')}
-			/>
+			>
+				<p>A web app for hungry, indecisive people who don't know where to start their search for food. My first major React app, this project taught me a lot about how to (and how not to) structure such an app, how to integrate React with a non-JavaScript backend (Django), as well as how to work with multiple APIs.
+				</p>
+			</ProjectCard>
 			<ProjectCard
-				name="Matthew Carey Voice"
-				description="A personal website for Matthew Carey, a professional singer and speech-language pathologist. This was my first Gatsby project, and my first project for a client. Creating a CMS and structuring the project in a way that allowed for client content management was an interesting challenge."
+				name="Matthew Carey, Voice"
 				techs={["React", "Gatsby", "Netlify CMS"]}
 				liveLink="https://hardcore-ardinghelli-3848a2.netlify.app/"
 				srcLink="https://github.com/scarey18/MattCarey"
 				imgFluid={getFluid('mattcarey-screenshot.png')}
-			/>
+			>
+				<p>A personal website for Matthew Carey, a professional singer and speech-language pathologist. This was my first Gatsby project, and my first project for a client. Creating a CMS and structuring the project in a way that allowed for client content management was an interesting challenge.
+				</p>
+			</ProjectCard>
 			<ProjectCard
-				name="Test 3"
-				description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam viverra orci sagittis. Tellus id interdum velit laoreet id donec. Porttitor eget dolor morbi non."
-				techs={["HTML5", "CSS3", "React"]}
-				liveLink="alkdsjfa"
-				srcLink="alskdfjasd"
-			/>
+				name="Unbeatable Tic-Tac-Toe"
+				techs={["HTML5", "CSS3", "Bulma", "JavaScript"]}
+				liveLink="https://scarey18.github.io/unbeatable-tic-tac-toe/"
+				srcLink="https://github.com/scarey18/unbeatable-tic-tac-toe"
+				imgFluid={getFluid('tictactoe-screenshot.png')}
+			>
+				<p>
+					A tic-tac-toe game that is impossible to win! This was a great exercise in problem solving and translating human thought processes into code. I later rewrote this app in React,&nbsp; 
+					<ExternalLink href="https://github.com/scarey18/react-tictactoe">
+						which you can view here.
+					</ExternalLink>
+				</p>
+			</ProjectCard>
+			<ProjectCard
+				name="What Technology Should I Learn?"
+				techs={["Django", "ArcGIS REST API", "GitHub Jobs API", "Stack Overflow Jobs API"]}
+				liveLink="http://www.wtsil.com/"
+				srcLink="https://github.com/scarey18/wtsil"
+				imgFluid={getFluid('wtsil-screenshot.png')}
+			>
+				<p>
+					This app aggregates tech keywords from job postings to show you what skills are desirable in your area. It taught me a lot about the parsing and manipulation of data (both JSON and XML), asynchronous operations, and regular expressions.
+				</p>
+			</ProjectCard>
+			<ProjectCard
+				name="Sudoku Solver"
+				techs={["HTML5", "CSS3", "JavaScript"]}
+				liveLink="https://scarey18.github.io/sudoku-solver/"
+				srcLink="https://github.com/scarey18/sudoku-solver"
+				imgFluid={getFluid('sudoku-screenshot.png')}
+			>
+				<p>
+					A web application for solving sudoku puzzles. This was one of my earliest projects, and was another great exercise in problem solving. It taught me a great deal about manipulating the DOM, modularity, and recursion. It was made without any frameworks or libraries.
+				</p>
+			</ProjectCard>
 		</Section>
 	)
 }
