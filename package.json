@@ -30,7 +30,8 @@
     "typeface-domine": "0.0.72",
     "typeface-open-sans": "0.0.75",
     "typography": "^0.16.19",
-    "typography-theme-alton": "^0.16.19"
+    "typography-theme-alton": "^0.16.19",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "prettier": "2.0.4"

@@ -5,6 +5,7 @@ import SEO from "../components/SEO"
 import WelcomeSection from '../components/WelcomeSection'
 import ProjectSection from '../components/ProjectSection'
 import AboutSection from '../components/AboutSection'
+import ContactSection from '../components/ContactSection'
 
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <WelcomeSection />
     <ProjectSection />
     <AboutSection />
+    <ContactSection />
   </Layout>
 )
 

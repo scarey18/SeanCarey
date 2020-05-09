@@ -5,6 +5,7 @@ import { transparentize, lighten } from 'polished'
 export default {
 	white: '#fdf5e6',
 	black: '#2b2b2b',
+	red: '#db0000',
 	boxShadow: 'rgba(2, 2, 2, 0.4)',
 	themeColor: '#014d18',
 	get lightenedTheme() {return lighten(0.13, this.themeColor)},

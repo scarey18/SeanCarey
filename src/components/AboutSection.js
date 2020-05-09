@@ -22,8 +22,12 @@ const StyledCard = styled(Card)`
 
 const Image = styled(Img)`
 	width: 200px;
-	border-radius: 1000px;
+	border-radius: 100px;
 	margin-bottom: 1rem;
+
+	&:hover {
+		border-radius: 50px;
+	}
 `
 
 const Text = styled.p`
@@ -53,7 +57,7 @@ const AboutSection = () => {
 			<StyledCard>
 				<Image fixed={query.file.childImageSharp.fixed} />
 				<Text>
-					I am trained musician turned developer. When I'm not programming, you can find me playing clarinet in a local wind band, running, or desperately begging for attention from my cat. 
+					I am a trained musician turned developer. When I'm not programming, you can find me playing clarinet in a local wind band, running, or desperately begging my cat for attention. 
 				</Text>
 			</StyledCard>
 		</section>
