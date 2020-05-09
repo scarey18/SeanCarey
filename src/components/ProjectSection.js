@@ -40,6 +40,20 @@ const ProjectSection = () => {
 	return (
 		<Section>
 			<SectionHeader>Projects</SectionHeader>
+			<div>
+				<p>	
+					These are a few of my favorite side projects. You can find more on my&nbsp;
+					<ExternalLink href="https://github.com/scarey18">
+						GitHub.
+					</ExternalLink>
+				</p>
+				<p>
+					This site was made with Gatsby/React. You can find its source code&nbsp;
+					<ExternalLink href="https://github.com/scarey18/SeanCarey">
+						here.
+					</ExternalLink>
+				</p>
+			</div>
 			<ProjectCard
 				name="What Should I Eat?"
 				techs={["React", "Django", "Yelp API", "ArcGIS API", "Google Maps API"]}
@@ -82,12 +96,12 @@ const ProjectSection = () => {
 				imgFluid={getFluid('wtsil-screenshot.png')}
 			>
 				<p>
-					This app aggregates tech keywords from job postings to show you what skills are desirable in your area. It taught me a lot about the parsing and manipulation of data (both JSON and XML), asynchronous operations, and regular expressions.
+					This app aggregates tech keywords from job postings to show you what skills are desirable in your area. It taught me a lot about the parsing and manipulation of data (JSON, XML, and HTML), asynchronous operations, and regular expressions.
 				</p>
 			</ProjectCard>
 			<ProjectCard
 				name="Sudoku Solver"
-				techs={["HTML5", "CSS3", "JavaScript"]}
+				techs={["HTML5", "CSS3", "JavaScript", "CSS Grid"]}
 				liveLink="https://scarey18.github.io/sudoku-solver/"
 				srcLink="https://github.com/scarey18/sudoku-solver"
 				imgFluid={getFluid('sudoku-screenshot.png')}
