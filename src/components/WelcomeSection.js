@@ -8,7 +8,6 @@ import TypewriterGroup from './TypewriterGroup'
 const Section = styled.section`
 	min-height: 20rem;
 	justify-content: center;
-	align-items: center;
 	color: ${P.white};
 	background-color: ${P.black};
 	padding-bottom: 50px;

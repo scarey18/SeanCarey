@@ -8,7 +8,7 @@ import P from '../utils/palette'
 const Header = styled.h1`
 	padding: 10px;
 	width: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 
 	&:after {
 		content: '';
@@ -20,18 +20,10 @@ const Header = styled.h1`
 	}
 `
 
-
-const SectionHeader = ({ className, children }) => {
-	return (
-		<Header className={className}>
-			{children}
-		</Header>
-	)
-}
+const SectionHeader = props => <Header {...props} />;
 
 
 SectionHeader.propTypes = {
-	className: PropTypes.string,
 	children: PropTypes.string.isRequired,
 }
 

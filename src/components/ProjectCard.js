@@ -8,20 +8,8 @@ import Img from 'gatsby-image'
 
 import P from '../utils/palette'
 import ExternalLink from './ExternalLink'
+import Card from './Card'
 
-
-const Card = styled.article`
-	width: 98%;
-	max-width: 800px;
-	background-color: ${P.white};
-	box-shadow: 0 0 10px 2px ${P.boxShadow};
-	border-radius: 7px;
-	margin-bottom: 3rem;
-
-	@media screen and (max-width: 599px) {
-		width: 95vw;
-	}
-`
 
 const ImgContainer = styled.div`
 	position: relative;

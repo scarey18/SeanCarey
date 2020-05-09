@@ -9,7 +9,6 @@ import ExternalLink from './ExternalLink'
 
 
 const Section = styled.section`
-	align-items: center;
 	overflow-x: visible;
 `
 

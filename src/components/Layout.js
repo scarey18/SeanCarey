@@ -50,13 +50,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 50px 40px 0 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `
 
 const Main = styled.main`
   width: 100%;
   min-height: 90vh;
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
   background: ${P.white};
   border-radius: ${P.borderRadius};
