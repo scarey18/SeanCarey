@@ -37,7 +37,7 @@ const ProjectSection = () => {
 	}
 
 	return (
-		<Section>
+		<Section id="projects">
 			<SectionHeader>Projects</SectionHeader>
 			<div>
 				<p>

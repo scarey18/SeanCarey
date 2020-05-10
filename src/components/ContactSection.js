@@ -47,7 +47,7 @@ const ContactSection = () => {
 	)
 
 	return (
-		<Section>
+		<Section id="contact">
 			<SectionHeader>Contact me</SectionHeader>
 			{ content }
 		</Section>

@@ -53,7 +53,7 @@ const AboutSection = () => {
 	`)
 
 	return (
-		<section>
+		<section id="about">
 			<SectionHeader>About me</SectionHeader>
 			<StyledCard>
 				<Image fixed={query.file.childImageSharp.fixed} />

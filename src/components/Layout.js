@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 import P from '../utils/palette'
 import Header from "./Header"
+import { MobileContextProvider } from '../utils/mobileContext'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -68,7 +69,7 @@ const Main = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <React.Fragment>
+    <MobileContextProvider>
       <GlobalStyle />
       <Header />
       <Main>{children}</Main>
@@ -77,7 +78,7 @@ const Layout = ({ children }) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </React.Fragment>
+    </MobileContextProvider>
   )
 }
 
