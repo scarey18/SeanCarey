@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 import P from '../utils/palette'
 import Header from "./Header"
-import { MobileContextProvider } from '../utils/mobileContext'
+import Footer from './Footer'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -69,16 +69,12 @@ const Main = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <MobileContextProvider>
+    <React.Fragment>
       <GlobalStyle />
       <Header />
       <Main>{children}</Main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </MobileContextProvider>
+      <Footer />
+    </React.Fragment>
   )
 }
 

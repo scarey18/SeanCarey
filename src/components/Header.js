@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import P from '../utils/palette'
-import { useMobileContext } from '../utils/mobileContext'
-import MobileNav from './MobileNav'
 import NavLink from './NavLink'
 
 
 const HeaderAnchor = styled.div`
 	width: 100%;
-	height: 4rem;
+	height: 3rem;
 	position: relative;
 `
 
@@ -39,7 +37,6 @@ const NavBar = styled.nav`
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useMobileContext();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -63,26 +60,16 @@ const Header = () => {
   	backgroundColor: null,
   }
 
-  const navLinks = [
-    <NavLink anchor="#header-top" key='0'>Home</NavLink>,
-    <NavLink anchor="#projects" key='1'>Projects</NavLink>,
-    <NavLink anchor="#about" key='2'>About</NavLink>,
-    <NavLink anchor="#contact" key='3'>Contact</NavLink>,
-  ]
-
-  const navigation = isMobile ? (
-    <MobileNav navLinks={navLinks} />
-  ) : (
-    <NavBar>
-      {navLinks}
-    </NavBar>
-  )
-
   return (
     <React.Fragment>
       <HeaderAnchor id="header-top"/>
       <FixedHeader id="header-fixed" style={fixedHeaderStyle}>
-        {navigation}
+      <NavBar>
+        <NavLink anchor="#header-top" key='0'>Home</NavLink>
+        <NavLink anchor="#projects" key='1'>Projects</NavLink>
+        <NavLink anchor="#about" key='2'>About</NavLink>
+        <NavLink anchor="#contact" key='3'>Contact</NavLink>
+      </NavBar>
       </FixedHeader>
     </React.Fragment>
   )
