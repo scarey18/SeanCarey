@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Sean Carey | Web Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `This is the official website for Sean Carey, full stack web developer.`,
+    author: `Sean Carey`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Sean Carey`,
+        short_name: `seancarey`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#014d18`,
+        theme_color: `#fdf5e6`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     `gatsby-plugin-styled-components`,

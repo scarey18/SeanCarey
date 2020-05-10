@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
 
-import P from '../utils/palette'
 import SectionHeader from './SectionHeader'
 import ContactForm from './ContactForm'
 import Card from './Card'

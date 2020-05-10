@@ -2,7 +2,6 @@ import React from "react"
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from "gatsby"
 
-import P from '../utils/palette'
 import SectionHeader from './SectionHeader'
 import ProjectCard from './ProjectCard'
 import ExternalLink from './ExternalLink'

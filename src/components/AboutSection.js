@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
-import P from '../utils/palette'
 import SectionHeader from './SectionHeader'
 import Card from './Card'
 
