@@ -46,7 +46,7 @@ const ProjectSection = () => {
 					</ExternalLink>
 				</p>
 				<p>	
-					These are a few of my favorite side projects. You can find more on my&nbsp;
+					Below are a few of my favorite side projects. You can find more on my&nbsp;
 					<ExternalLink href="https://github.com/scarey18">
 						GitHub.
 					</ExternalLink>
