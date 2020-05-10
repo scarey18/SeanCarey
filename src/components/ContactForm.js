@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { lighten } from "polished"
+import { darken } from "polished"
 import PropTypes from "prop-types"
 import fetch from 'unfetch'
 import { FaEnvelope } from 'react-icons/fa'
@@ -90,7 +90,7 @@ const ButtonField = styled.p`
     align-items: center;
 
 		&:hover, &:focus {
-			background-color: ${lighten(0.15, P.themeColor)};
+			background-color: ${darken(0.02, P.themeColor)};
 		}
 
     svg {
@@ -159,52 +159,50 @@ const ContactForm = ({ onSubmission }) => {
   }
 
   return (
-    <React.Fragment>
-    	<Form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-        noValidate
-      >
-      	<input type="hidden" name="form-name" value="contact" />
-        <p hidden>
-          <label>
-            Don’t fill this out: 
-            <input name="bot-field" onChange={handleChange} />
-          </label>
-        </p>
-        <InputField>
-          <label>
-            Your name:
-            {warnings.name && <span>{warnings.name}</span>}
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-        </InputField>
-        <InputField>
-          <label>
-            Your email:
-            {warnings.email && <span>{warnings.email}</span>}
+  	<Form
+      name="contact"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      noValidate
+    >
+    	<input type="hidden" name="form-name" value="contact" />
+      <p hidden>
+        <label>
+          Don’t fill this out: 
+          <input name="bot-field" onChange={handleChange} />
+        </label>
+      </p>
+      <InputField>
+        <label>
+          Your name:
+          {warnings.name && <span>{warnings.name}</span>}
+          <input type="text" name="name" onChange={handleChange} />
+        </label>
+      </InputField>
+      <InputField>
+        <label>
+          Your email:
+          {warnings.email && <span>{warnings.email}</span>}
 
-            <input type="email" name="email" onChange={handleChange} />
-          </label>
-        </InputField>
-        <TextAreaField>
-          <label>
-            Message:
-            {warnings.message && <span>{warnings.message}</span>}
-            <textarea name="message" onChange={handleChange} />
-          </label>
-        </TextAreaField>
-        <ButtonField>
-          <button type="submit">
-            <FaEnvelope />
-            Send
-          </button>
-        </ButtonField>
-      </Form>
-    </React.Fragment>
+          <input type="email" name="email" onChange={handleChange} />
+        </label>
+      </InputField>
+      <TextAreaField>
+        <label>
+          Message:
+          {warnings.message && <span>{warnings.message}</span>}
+          <textarea name="message" onChange={handleChange} />
+        </label>
+      </TextAreaField>
+      <ButtonField>
+        <button type="submit">
+          <FaEnvelope />
+          Send
+        </button>
+      </ButtonField>
+    </Form>
   )
 }
 

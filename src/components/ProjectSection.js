@@ -40,16 +40,16 @@ const ProjectSection = () => {
 		<Section>
 			<SectionHeader>Projects</SectionHeader>
 			<div>
-				<p>	
-					These are a few of my favorite side projects. You can find more on my&nbsp;
-					<ExternalLink href="https://github.com/scarey18">
-						GitHub.
-					</ExternalLink>
-				</p>
 				<p>
 					This site was made with Gatsby/React. You can find its source code&nbsp;
 					<ExternalLink href="https://github.com/scarey18/SeanCarey">
 						here.
+					</ExternalLink>
+				</p>
+				<p>	
+					These are a few of my favorite side projects. You can find more on my&nbsp;
+					<ExternalLink href="https://github.com/scarey18">
+						GitHub.
 					</ExternalLink>
 				</p>
 			</div>
