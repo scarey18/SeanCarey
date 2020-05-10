@@ -65,7 +65,7 @@ const ProjectSection = () => {
 			<ProjectCard
 				name="Matthew Carey, Voice"
 				techs={["React", "Gatsby", "Netlify CMS"]}
-				liveLink="https://hardcore-ardinghelli-3848a2.netlify.app/"
+				liveLink="https://www.matthewcareybaritone.com/"
 				srcLink="https://github.com/scarey18/MattCarey"
 				imgFluid={getFluid('mattcarey-screenshot.png')}
 			>
