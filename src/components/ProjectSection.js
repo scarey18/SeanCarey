@@ -63,27 +63,27 @@ const ProjectSection = () => {
 				</p>
 			</ProjectCard>
 			<ProjectCard
+				name="Unbeatable Tic-Tac-Toe"
+				techs={["React", "Bulma"]}
+				liveLink="https://scarey18.github.io/react-tictactoe/"
+				srcLink="https://github.com/scarey18/react-tictactoe"
+				imgFluid={getFluid('tictactoe-screenshot.png')}
+			>
+				<p>
+					A tic-tac-toe game that is impossible to win! This was a great exercise in problem solving and translating human thought processes into code. This version was made with React, but I originally wrote it in plain HTML, CSS, and JavaScript,&nbsp; 
+					<ExternalLink href="https://github.com/scarey18/unbeatable-tic-tac-toe">
+						which you can view here.
+					</ExternalLink>
+				</p>
+			</ProjectCard>
+			<ProjectCard
 				name="Matthew Carey, Voice"
-				techs={["React", "Gatsby", "Netlify CMS"]}
+				techs={["React", "Gatsby", "Netlify CMS", "GraphQL"]}
 				liveLink="https://www.matthewcareybaritone.com/"
 				srcLink="https://github.com/scarey18/MattCarey"
 				imgFluid={getFluid('mattcarey-screenshot.png')}
 			>
 				<p>A personal website for Matthew Carey, a professional singer and speech-language pathologist. This was my first Gatsby project, and my first project for a client. Creating a CMS and structuring the project in a way that allowed for client content management was an interesting challenge.
-				</p>
-			</ProjectCard>
-			<ProjectCard
-				name="Unbeatable Tic-Tac-Toe"
-				techs={["HTML5", "CSS3", "Bulma", "JavaScript"]}
-				liveLink="https://scarey18.github.io/unbeatable-tic-tac-toe/"
-				srcLink="https://github.com/scarey18/unbeatable-tic-tac-toe"
-				imgFluid={getFluid('tictactoe-screenshot.png')}
-			>
-				<p>
-					A tic-tac-toe game that is impossible to win! This was a great exercise in problem solving and translating human thought processes into code. I later rewrote this app in React,&nbsp; 
-					<ExternalLink href="https://github.com/scarey18/react-tictactoe">
-						which you can view here.
-					</ExternalLink>
 				</p>
 			</ProjectCard>
 			<ProjectCard
